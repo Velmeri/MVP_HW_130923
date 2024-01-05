@@ -1,0 +1,31 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVP_HW_130923"
+        xmlns:Collections="clr-namespace:System.Collections;assembly=mscorlib" x:Class="MVP_HW_130923.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="372" Width="318" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="305*"/>
+            <RowDefinition Height="51*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Name:" Margin="10,30,240,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Height="26" Width="34"/>
+        <TextBox x:Name="tbName" Margin="66,34,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18"/>
+        <TextBox x:Name="tbAge" Margin="66,65,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" TextChanged="tbAge_TextChanged"/>
+        <Button Content="Save" x:Name ="bSave" Margin="75,103,161,0" VerticalAlignment="Top" Click="bSave_Click" Height="20"/>
+        <Button Content="Show All" x:Name ="bShow_All" Margin="161,103,75,0" VerticalAlignment="Top" Height="20" Click="bShow_All_Click"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" RenderTransformOrigin="0.504,0.517" Margin="10,130,10,0" Height="174" VerticalAlignment="Top" x:Name="lbList">
+            <ListBox.ItemsSource>
+                <Collections:SortedList/>
+            </ListBox.ItemsSource>
+        </ListBox>
+        <Button Content="Search" x:Name="bSearch" HorizontalAlignment="Left" Margin="10,10,0,10" RenderTransformOrigin="0.666,0.574" Width="91" Grid.Row="1" Click="bSearch_Click"/>
+        <TextBox Margin="106,10,10,10" TextWrapping="Wrap" Grid.Row="1" x:Name="tbSearch"/>
+
+    </Grid>
+</Window>
